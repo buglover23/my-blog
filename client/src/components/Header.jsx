@@ -7,7 +7,7 @@ export default function Header() {
     return (
         <Navbar className="border-b-2">
             <Link to="/" className="self-center dark:text-white">
-                <img className="rounded-full w-28 h-28 " src="../../public/image/logo.png" alt="logo.png" />
+                <img className="rounded-full w-28 h-28 " src="/image/logo.png" alt="logo.png" />
             </Link>
             <form action="">
                 <TextInput
