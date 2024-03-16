@@ -1,14 +1,14 @@
-import { Alert, Button, Label, TextInput } from "flowbite-react"
-import { useState } from "react";
-import { Link } from "react-router-dom"
+import { Alert, Button, Label,Spinner, TextInput } from "flowbite-react"
+import { useState} from "react";
+import { Link, useNavigate } from "react-router-dom"
 
 
 export default function SingUp() {
 
   const [formData, setFormData] = useState({});
   const [errorMessage, setErrorMessage] = useState(null);
-  const [laoding, setLoadisng] = useState(false);
-
+  const [loading, setLoading] = useState(false);
+ const navigate = useNavigate();
 
 
   const handleChange = (e) => {
@@ -26,16 +26,24 @@ export default function SingUp() {
 
     // this is submit application for submit
     try {
+      setLoading(true);
+      setErrorMessage(null);
       const res = await fetch('/api/auth/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-
       const data = await res.json();
-
+      if (data.success === false) {
+        return setErrorMessage(data.message);
+      }
+      setLoading(false);
+      if(res.ok) {
+        navigate('/sign-in');
+      }
     } catch (error) {
-
+      setErrorMessage(error.message);
+      setLoading(false);
     }
   }
   return (
@@ -79,7 +87,14 @@ export default function SingUp() {
                 id="password" onChange={handleChange} />
             </div>
             <Button outline gradientDuoTone='redToYellow' type="submit">
-              Sgin Up
+            {loading ? (
+                <>
+                  <Spinner size='sm' />
+                  <span className='pl-3'>Loading...</span>
+                </>
+              ) : (
+                'Sign Up'
+              )}
             </Button>
           </form>
 
