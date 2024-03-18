@@ -56,11 +56,10 @@ export default function SingUp() {
           <Link to="/">
             <img className="rounded-full w-64 h-64  mx-auto" src="/image/logo.png" alt="logo.png" />
           </Link>
-          <p className="text-sm mt- text-center">
+          <p className="text-sm mt-5 text-center">
             {`Shun's`} blog へようこそこのページは自己学習、最新の情報や自分の課題を目的として作りました、自己満ブログです。ぜひ、登録お願い致します。＊メルマガや迷惑メールなどはありませんのでご安心してください。
           </p>
         </div>
-
 
         {/* righ side */}
         <div className="flex-1">
