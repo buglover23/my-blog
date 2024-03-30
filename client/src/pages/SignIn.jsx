@@ -50,7 +50,7 @@ export default function SignIn() {
           <Link to="/">
             <img className="rounded-full w-64 h-64  mx-auto" src="/image/logo.png" alt="logo.png" />
           </Link>
-          <p className="text-sm mt-5 text-center">
+          <p className="text-md mt-5 text-center s">
             {`Shun's`} blog 
           </p>
         </div>
