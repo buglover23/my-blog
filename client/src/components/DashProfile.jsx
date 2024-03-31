@@ -199,8 +199,8 @@ export default function DashProfile() {
                 <TextInput type='email' id='email' placeholder='email' defaultValue={currentUser.email} onChange={handleChange} />
                 <TextInput type='password' id='password' placeholder='password' onChange={handleChange} />
                 <Button type='submit' outline gradientDuoTone='redToYellow' disabled={loading || imageFileUploading}>
-                    {loading ? 'Loading...': 'Update'}
-                </Button> 
+                    {loading ? 'Loading...' : 'Update'}
+                </Button>
                 {
                     currentUser.isAdmin && (
                         <Link to={'/create-post'}>
