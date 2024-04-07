@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const postSchema = new mongoose.Schema(
   {
@@ -18,11 +18,11 @@ const postSchema = new mongoose.Schema(
     image: {
       type: String,
       default:
-        "https://entail-assets.com/mayple/62a1ff71f520bb785087f5b4_topmarketingblogs1_19f178343592408234a94f70c4bb9ad2_2000-1699776190264.jpg",
+        'https://cdn.pixabay.com/photo/2023/12/09/10/10/woman-8439003_1280.png',
     },
     category: {
       type: String,
-      default: "Uncategorized",
+      default: 'uncategorized',
     },
     slug: {
       type: String,
@@ -30,9 +30,9 @@ const postSchema = new mongoose.Schema(
       unique: true,
     },
   },
-  { timeseries: true }
+  { timestamps: true }
 );
 
-const Post = mongoose.model("Post", postSchema);
+const Post = mongoose.model('Post', postSchema);
 
 export default Post;
