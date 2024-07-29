@@ -122,9 +122,12 @@ export default function UpdatePost() {
                         <option value="javascript">Javascript</option>
                         <option value="reactjs">React.js</option>
                         <option value="vuejs">Vue.js</option>
+                        <option value="database">Database</option>
+                        <option value="python">python</option>
                         <option value="spring boots">Spring boots</option>
                         <option value="java">Java</option>
                         <option value="linux">Linux</option>
+                        <option value="aws">AWS</option>
                         <option value="diary">My diary</option>
                     </Select>
                 </div>
